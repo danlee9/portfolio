@@ -84,7 +84,7 @@ a:hover {
     font-family: "Roboto Slab", serif;
     font-weight: bold; }
   .about img {
-    width: 350px; }
+    width: 250px; }
   .about p {
     font-size: 1.4em;
     line-height: 1.1em;
@@ -93,10 +93,14 @@ a:hover {
 /* Portfolio Section */
 .portfolio {
   padding: 40px 0;
-  background: url("../img/laptop-work.jpg") no-repeat 0 -70px;
+  background: url("../img/laptop-work.jpg") no-repeat 0 0;
   background-size: cover; }
   .portfolio h1, .portfolio h3 {
     font-family: 'Roboto Slab', serif; }
+
+.portfolio-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  color: #337ab7; }
 
 .portfolio-item {
   position: relative;
@@ -131,6 +135,38 @@ a:hover {
   padding: 15px; }
   .portfolio-caption h4 {
     color: #337ab7; }
+
+@media (max-width: 1200px) {
+  .intro {
+    height: 880px; }
+  .portfolio-caption p {
+    font-size: 0.8em; } }
+
+@media (max-width: 974px) {
+  .intro {
+    height: 760px; }
+  .intro-message h1 {
+    font-size: 4em; }
+  .portfolio-caption p {
+    font-size: 0.9em; } }
+
+@media (max-width: 775px) {
+  .intro {
+    height: 600px; }
+  .intro-message h1 {
+    font-size: 3em; }
+  .intro-message h3 {
+    font-size: 1.2em; }
+  .portfolio-item {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px; }
+  .portfolio h1 {
+    font-size: 2em; }
+  .portfolio h3 {
+    font-size: 1.5em; }
+  .portfolio-overlay {
+    background: transparent; } }
 
 /* Contact Section */
 .contact {
