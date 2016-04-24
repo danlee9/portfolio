@@ -33,6 +33,7 @@ gulp.task('copy', ['clean'], function() {
     './public/bower_components/font-awesome/**/*.woff2',
     './public/bower_components/font-awesome/**/*.otf',
     './public/**/*.png',
+    './public/**/*.PNG',
     './public/**/*.jpg'])
 		.pipe(gulp.dest('./build'));
 });
