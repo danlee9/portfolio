@@ -1,8 +1,14 @@
+var $navbar = $('.navbar');
+
 function navbar() {
-	if ($('.navbar').offset().top > 50) {
-		$('.navbar-fixed-top').addClass('top-nav-collapse');
+	if ($navbar.offset().top > 50) {
+		if (!$navbar.hasClass('top-nav-collapse')) {
+			$navbar.addClass('top-nav-collapse');
+		}		
 	} else {
-		$('.navbar-fixed-top').removeClass('top-nav-collapse');
+		if ($navbar.hasClass('top-nav-collapse')) {
+			$navbar.removeClass('top-nav-collapse');
+		}
 	}
 }
 
