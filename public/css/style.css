@@ -6,7 +6,7 @@ body {
 body {
   font-family: "Noto Sans", Helvetica, Arial, sans-serif;
   color: #333333;
-  background-color: #f4f4f4; }
+  background-color: white; }
 
 i {
   font-size: 3em;
@@ -60,14 +60,13 @@ a:hover {
 .intro {
   height: 980px;
   padding-top: 50px;
-  background: url("../img/laptop-intro.jpg") no-repeat center center;
-  background-size: cover;
+  background: url("../img/laptop-intro.jpg") no-repeat center -75px fixed;
   padding-bottom: 50px; }
 
 .intro-message {
   position: relative;
-  padding-top: 20%;
-  padding-bottom: 20%;
+  padding-top: 25%;
+  padding-bottom: 25%;
   color: #337ab7; }
   .intro-message h1 {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
@@ -81,7 +80,7 @@ a:hover {
   .about h1, .about h2 {
     color: #337ab7; }
   .about h1 {
-    font-family: "Roboto Slab", serif;
+    font-family: 'futura-pt', "Roboto Slab", serif;
     font-weight: bold; }
   .about img {
     width: 250px; }
@@ -93,8 +92,7 @@ a:hover {
 /* Portfolio Section */
 .portfolio {
   padding: 40px 0;
-  background: url("../img/laptop-work.jpg") no-repeat 0 0;
-  background-size: cover; }
+  background: url("../img/laptop-work-large.jpg") no-repeat 0 -300px fixed; }
   .portfolio h1, .portfolio h3 {
     font-family: 'Roboto Slab', serif; }
 
@@ -136,23 +134,41 @@ a:hover {
   .portfolio-caption h4 {
     color: #337ab7; }
 
+@media (max-width: 1400px) {
+  .intro {
+    background: url("../img/laptop-intro-1600.jpg") no-repeat center 0px fixed; } }
+
 @media (max-width: 1200px) {
   .intro {
-    height: 880px; }
+    height: 800px; }
   .portfolio-caption p {
     font-size: 0.8em; } }
 
+@media (max-width: 1100px) {
+  .intro {
+    background-image: url("../img/laptop-intro-1450.jpg");
+    background-position: center 0px; } }
+
 @media (max-width: 974px) {
   .intro {
-    height: 760px; }
+    height: 720px;
+    background-image: url("../img/laptop-intro-1310.jpg"); }
   .intro-message h1 {
     font-size: 4em; }
   .portfolio-caption p {
     font-size: 0.9em; } }
 
-@media (max-width: 775px) {
+@media (max-width: 900px) {
   .intro {
-    height: 600px; }
+    height: 660px;
+    background-image: url("../img/laptop-intro-1200.jpg"); } }
+
+@media (max-width: 800px) {
+  .intro {
+    height: 500px;
+    background-image: url("../img/laptop-intro-1050.jpg"); } }
+
+@media (max-width: 775px) {
   .intro-message h1 {
     font-size: 3em; }
   .intro-message h3 {
@@ -171,3 +187,14 @@ a:hover {
 /* Contact Section */
 .contact {
   padding: 40px 0; }
+
+/* Fade In animation for future use. Current implementation with scrolling effect too slow on older laptop*/
+.fadeIn {
+  animation: fadeIn 2.5s;
+  opacity: 1; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
