@@ -14,6 +14,7 @@ function navbar() {
 
 var $window = $(window);
 var $intro = $('.intro');
+var $portfolio = $('.portfolio');
 var velocity = 0.5;
 var pos;
 var initial = $intro.css('backgroundPosition').split(' ')[1];
@@ -32,12 +33,32 @@ $window.on('resize', function() {
 });
 
 
-function parallax(){
+var parallax = function() {
 	if ($navbar.offset().top < $intro.height()) {
 		pos = $window.scrollTop();
   	$intro.css('backgroundPosition', '50% -' + Math.round(pos * velocity - initial) + 'px');
 	}
 };
+
+var ms_ie = false;
+var ua = window.navigator.userAgent;
+var old_ie = ua.indexOf('MSIE ');
+var new_ie = ua.indexOf('Trident/');
+
+if ((old_ie > -1) || (new_ie > -1)) {
+    ms_ie = true;
+}
+
+console.log(ms_ie);
+
+if ( ms_ie ) {
+  parallax = function() {
+  	return;
+  }
+  $intro.css('backgroundAttachment', 'scroll');
+  $portfolio.css('backgroundAttachment', 'scroll');
+  $portfolio.css('backgroundPosition', '50% 0px');
+}
 
 /* Fade variables */
 
