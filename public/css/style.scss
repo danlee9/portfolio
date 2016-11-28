@@ -43,7 +43,7 @@ a {
 		&:after {
 			background: #fff;
 	    border-radius: 5px;
-	    bottom: 46px;
+	    top: 46px;
 	    left: -40%;
 	    content: attr(title);
 	    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -83,10 +83,10 @@ a {
 
 .intro {
 	height: 980px;
-	padding-top: 50px;
-	background: url('../img/laptop-intro.jpg') no-repeat center -75px fixed;
+	// padding-top: 50px;
+	background: url('../img/laptop-intro.jpg') no-repeat;
 	// background-size: cover;
-	padding-bottom: 50px;
+	// padding-bottom: 50px;
 }
 
 .intro-message {
@@ -106,7 +106,7 @@ a {
 /* About Section */
 
 .about {
-	padding: 40px 0;
+	padding-bottom: 50px;
 	h1, h2 {
 		color: $bootstrap-nav-color;
 	}
@@ -128,7 +128,7 @@ a {
 
 .portfolio {
 	padding: 40px 0;
-	background: url('../img/laptop-work-large.jpg') no-repeat 0 -300px fixed;
+	background: url('../img/laptop-work-large.jpg') no-repeat;
 	// background-size: cover;
 	h1, h3 {
 		font-family: 'Roboto Slab', serif;
@@ -148,7 +148,7 @@ a {
 		max-width: 360px;
 		max-height: 200px;
 	}
-	// opacity: 0; //fadeIn
+	opacity: 0; //fadeIn
 }
 
 .portfolio-hover {
@@ -180,9 +180,9 @@ a {
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1550px) {
 	.intro {
-		background: url('../img/laptop-intro-1600.jpg') no-repeat center 0px fixed;
+		background: url('../img/laptop-intro-1600.jpg') no-repeat center 0px;
 	}
 
 }

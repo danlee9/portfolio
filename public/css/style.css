@@ -14,7 +14,6 @@ i {
 
 a:visited, a:active {
   color: #337ab7; }
-
 a:hover {
   color: #23527c; }
 
@@ -26,7 +25,7 @@ a:hover {
     .popup:hover:after {
       background: #fff;
       border-radius: 5px;
-      bottom: 46px;
+      top: 46px;
       left: -40%;
       content: attr(title);
       font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -51,17 +50,15 @@ a:hover {
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
+
   .top-nav-collapse {
     padding: 0;
     background-color: #333333;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3); } }
-
 /* Intro Section */
 .intro {
   height: 980px;
-  padding-top: 50px;
-  background: url("../img/laptop-intro.jpg") no-repeat center -75px fixed;
-  padding-bottom: 50px; }
+  background: url("../img/laptop-intro.jpg") no-repeat; }
 
 .intro-message {
   position: relative;
@@ -76,7 +73,7 @@ a:hover {
 
 /* About Section */
 .about {
-  padding: 40px 0; }
+  padding-bottom: 50px; }
   .about h1, .about h2 {
     color: #337ab7; }
   .about h1 {
@@ -92,7 +89,7 @@ a:hover {
 /* Portfolio Section */
 .portfolio {
   padding: 40px 0;
-  background: url("../img/laptop-work-large.jpg") no-repeat 0 -300px fixed; }
+  background: url("../img/laptop-work-large.jpg") no-repeat; }
   .portfolio h1, .portfolio h3 {
     font-family: 'Roboto Slab', serif; }
 
@@ -102,7 +99,8 @@ a:hover {
 
 .portfolio-item {
   position: relative;
-  margin: 15px 0; }
+  margin: 15px 0;
+  opacity: 0; }
   .portfolio-item img {
     width: 100%;
     max-width: 360px;
@@ -134,56 +132,57 @@ a:hover {
   .portfolio-caption h4 {
     color: #337ab7; }
 
-@media (max-width: 1400px) {
+@media (max-width: 1550px) {
   .intro {
-    background: url("../img/laptop-intro-1600.jpg") no-repeat center 0px fixed; } }
-
+    background: url("../img/laptop-intro-1600.jpg") no-repeat center 0px; } }
 @media (max-width: 1200px) {
   .intro {
     height: 800px; }
+
   .portfolio-caption p {
     font-size: 0.8em; } }
-
 @media (max-width: 1100px) {
   .intro {
     background-image: url("../img/laptop-intro-1450.jpg");
     background-position: center 0px; } }
-
 @media (max-width: 974px) {
   .intro {
     height: 720px;
     background-image: url("../img/laptop-intro-1310.jpg"); }
+
   .intro-message h1 {
     font-size: 4em; }
+
   .portfolio-caption p {
     font-size: 0.9em; } }
-
 @media (max-width: 900px) {
   .intro {
     height: 660px;
     background-image: url("../img/laptop-intro-1200.jpg"); } }
-
 @media (max-width: 800px) {
   .intro {
     height: 500px;
     background-image: url("../img/laptop-intro-1050.jpg"); } }
-
 @media (max-width: 775px) {
   .intro-message h1 {
     font-size: 3em; }
+
   .intro-message h3 {
     font-size: 1.2em; }
+
   .portfolio-item {
     margin-left: auto;
     margin-right: auto;
     width: 320px; }
+
   .portfolio h1 {
     font-size: 2em; }
+
   .portfolio h3 {
     font-size: 1.5em; }
+
   .portfolio-overlay {
     background: transparent; } }
-
 /* Contact Section */
 .contact {
   padding: 40px 0; }
@@ -198,3 +197,5 @@ a:hover {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -13,60 +13,60 @@ function navbar() {
 }
 
 var $window = $(window);
-var $intro = $('.intro');
-var $portfolio = $('.portfolio');
-var velocity = 0.5;
-var pos;
-var initial = $intro.css('backgroundPosition').split(' ')[1];
-		initial = initial.slice(0, initial.length -2);
-		console.log(initial);
+// var $intro = $('.intro');
+// var $portfolio = $('.portfolio');
+// var velocity = 0.5;
+// var pos;
+// var initial = $intro.css('backgroundPosition').split(' ')[1];
+// 		initial = initial.slice(0, initial.length -2);
+// 		console.log(initial);
 
-$window.on('resize', function() {
-	if ($window.width() >= 1400) {
-		$intro.css('backgroundPosition', '50% -75px');
-	} else {
-		$intro.css('backgroundPosition', '50% 0px');
-	}
-	initial = $intro.css('backgroundPosition').split(' ')[1];
-	initial = initial.slice(0, initial.length -2);
-	console.log(initial);
-});
+// $window.on('resize', function() {
+// 	if ($window.width() >= 1400) {
+// 		$intro.css('backgroundPosition', '50% -75px');
+// 	} else {
+// 		$intro.css('backgroundPosition', '50% 0px');
+// 	}
+// 	initial = $intro.css('backgroundPosition').split(' ')[1];
+// 	initial = initial.slice(0, initial.length -2);
+// 	console.log(initial);
+// });
 
 
-var parallax = function() {
-	if ($navbar.offset().top < $intro.height()) {
-		pos = $window.scrollTop();
-  	$intro.css('backgroundPosition', '50% -' + Math.round(pos * velocity - initial) + 'px');
-	}
-};
+// var parallax = function() {
+// 	if ($navbar.offset().top < $intro.height()) {
+// 		pos = $window.scrollTop();
+//   	$intro.css('backgroundPosition', '50% -' + Math.round(pos * velocity - initial) + 'px');
+// 	}
+// };
 
-var ms_ie = false;
-var ua = window.navigator.userAgent;
-var old_ie = ua.indexOf('MSIE ');
-var new_ie = ua.indexOf('Trident/');
+// var ms_ie = false;
+// var ua = window.navigator.userAgent;
+// var old_ie = ua.indexOf('MSIE ');
+// var new_ie = ua.indexOf('Trident/');
 
-if ((old_ie > -1) || (new_ie > -1)) {
-    ms_ie = true;
-}
+// if ((old_ie > -1) || (new_ie > -1)) {
+//     ms_ie = true;
+// }
 
-console.log(ms_ie);
+// console.log(ms_ie);
 
-if ( ms_ie ) {
-  parallax = function() {
-  	return;
-  }
-  $intro.css('backgroundAttachment', 'scroll');
-  $portfolio.css('backgroundAttachment', 'scroll');
-  $portfolio.css('backgroundPosition', '50% 0px');
-}
+// if ( ms_ie ) {
+//   parallax = function() {
+//   	return;
+//   }
+//   $intro.css('backgroundAttachment', 'scroll');
+//   $portfolio.css('backgroundAttachment', 'scroll');
+//   $portfolio.css('backgroundPosition', '50% 0px');
+// }
 
 /* Fade variables */
 
-// var $item = $('.portfolio-item');
-// var bottom_of_object;
-// var bottom_of_window;
-// var items = $item.length;
-// var fadedIn = 0;
+var $item = $('.portfolio-item');
+var bottom_of_object;
+var bottom_of_window;
+var items = $item.length;
+var fadedIn = 0;
 
 /* Fade In Implementation 1 */
 
@@ -92,32 +92,32 @@ if ( ms_ie ) {
 
 /* Implementation 2 */
 
-// function fadeIn() {
-// 	 $item.each( function(i){
+function fadeIn() {
+	 $item.each( function(i){
       
-//       var $this = $(this);      
-//       var bottom_of_object = $this.position().top + $this.outerHeight();
-//       var bottom_of_window = $window.scrollTop() + $window.height();
+      var $this = $(this);      
+      var bottom_of_object = $this.position().top + $this.outerHeight();
+      var bottom_of_window = $window.scrollTop() + $window.height();
       
-//        
-//       bottom_of_window = bottom_of_window + 200;  //Adjust the "200" to either have a delay or that the content starts fading a bit before you reach it  
+       
+      bottom_of_window = bottom_of_window + 200;  //Adjust the "200" to either have a delay or that the content starts fading a bit before you reach it  
     
-//       if( bottom_of_window > bottom_of_object ){
+      if( bottom_of_window > bottom_of_object ){
           
-//          $this.addClass('fadeIn');
+         $this.addClass('fadeIn');
               
-//       }
-//   }); 
-// }
+      }
+  }); 
+}
 
 navbar();
-parallax();
-// fadeIn();
+// parallax();
+fadeIn();
 
 $window.scroll(function(){
 	navbar();
-	parallax();
-	// fadeIn();
+	// parallax();
+	fadeIn();
 });
 
 $(function() {
