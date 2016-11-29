@@ -63,6 +63,10 @@ a {
 	background-color: $dark;
 }
 
+.icon-bar {
+	background: #337ab7;
+}
+
 @media(min-width:767px) {
     .navbar-custom {
         padding: 20px 0;
@@ -182,7 +186,7 @@ a {
 
 @media (max-width: 1550px) {
 	.intro {
-		background: url('../img/laptop-intro-1600.jpg') no-repeat center 0px;
+		background: url('../img/laptop-intro-1600.jpg') no-repeat;
 	}
 
 }
@@ -200,6 +204,12 @@ a {
 	.intro {
 		background-image: url('../img/laptop-intro-1450.jpg');
 		background-position: center 0px;
+	}
+}
+
+@media (max-width: 990px) {
+	.portfolio {
+		background: url('../img/laptop-work-large.jpg') no-repeat fixed;
 	}
 }
 
