@@ -60,7 +60,7 @@ a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3); } }
 /* Intro Section */
 .intro {
-  height: 980px;
+  height: 900px;
   background: url("../img/laptop-intro.jpg") no-repeat; }
 
 .intro-message {
@@ -76,6 +76,7 @@ a:hover {
 
 /* About Section */
 .about {
+  padding-top: 40px;
   padding-bottom: 50px; }
   .about h1, .about h2 {
     color: #337ab7; }
@@ -88,6 +89,10 @@ a:hover {
     font-size: 1.4em;
     line-height: 1.1em;
     margin: 20px; }
+
+.about-text {
+  margin: 0 auto;
+  max-width: 80%; }
 
 /* Portfolio Section */
 .portfolio {

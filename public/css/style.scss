@@ -86,7 +86,7 @@ a {
 /* Intro Section */
 
 .intro {
-	height: 980px;
+	height: 900px;
 	// padding-top: 50px;
 	background: url('../img/laptop-intro.jpg') no-repeat;
 	// background-size: cover;
@@ -110,6 +110,7 @@ a {
 /* About Section */
 
 .about {
+	padding-top: 40px;
 	padding-bottom: 50px;
 	h1, h2 {
 		color: $bootstrap-nav-color;
@@ -126,6 +127,11 @@ a {
 		line-height: 1.1em;
 		margin: 20px;
 	}
+}
+
+.about-text {
+	margin: 0 auto;
+	max-width: 80%;
 }
 
 /* Portfolio Section */
