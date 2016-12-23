@@ -97,7 +97,7 @@ a:hover {
 /* Portfolio Section */
 .portfolio {
   padding: 40px 0;
-  background: url("../img/laptop-work-large.jpg") no-repeat; }
+  background: url("../img/laptop-work-large.jpg") no-repeat center center; }
   .portfolio h1, .portfolio h3 {
     font-family: 'Roboto Slab', serif; }
 
