@@ -129,3 +129,19 @@ $(function() {
 		event.preventDefault();
 	});
 });
+
+$('.popup').on('click', function() {
+	var $this = $(this);
+	$this.toggleClass('clicked');
+	if ($this.hasClass('clicked')) $this.addClass('hover');
+	else $this.removeClass('hover');
+});
+
+$('.popup').on('mouseenter', function() {
+	$(this).addClass('hover');
+});
+
+$('.popup').on('mouseleave', function() {
+	var $this = $(this);
+	if (!$this.hasClass('clicked')) $this.removeClass('hover');
+})

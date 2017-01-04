@@ -35,25 +35,50 @@ a {
 	}
 }
 
+.name {
+	text-shadow: 1px 2px 3px $primary;
+}
+
 .popup {
 	position: relative;
 	display: inline;
-	&:hover {
-		color: dodgerblue;
-		&:after {
-			background: #fff;
-	    border-radius: 5px;
-	    top: 46px;
-	    left: -40%;
-	    content: attr(title);
-	    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	    color: #000;
-	    font-size: 0.4em;
-	    padding: 3px 10px;
-	    position: absolute;
-	    z-index: 98;
-		}
+	// &:hover {
+	// 	color: dodgerblue;
+	// 	&:after {
+	// 		background: #fff;
+	//     border-radius: 5px;
+	//     top: 46px;
+	//     left: -40%;
+	//     content: attr(title);
+	//     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	//     color: #000;
+	//     font-size: 0.4em;
+	//     padding: 3px 10px;
+	//     position: absolute;
+	//     z-index: 98;
+	// 	}
+	// }
+}
+
+.hover {
+	color: dodgerblue;
+	&:after {
+		background: #fff;
+    border-radius: 5px;
+    top: 46px;
+    left: -40%;
+    content: attr(title);
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000;
+    font-size: 0.4em;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 98;
 	}
+}
+
+.clicked {
+	color: steelblue;
 }
 
 .navbar-custom {

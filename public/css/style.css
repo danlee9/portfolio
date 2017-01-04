@@ -17,23 +17,30 @@ a:visited, a:active {
 a:hover {
   color: #23527c; }
 
+.name {
+  text-shadow: 1px 2px 3px #26a5d3; }
+
 .popup {
   position: relative;
   display: inline; }
-  .popup:hover {
-    color: dodgerblue; }
-    .popup:hover:after {
-      background: #fff;
-      border-radius: 5px;
-      top: 46px;
-      left: -40%;
-      content: attr(title);
-      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: #000;
-      font-size: 0.4em;
-      padding: 3px 10px;
-      position: absolute;
-      z-index: 98; }
+
+.hover {
+  color: dodgerblue; }
+  .hover:after {
+    background: #fff;
+    border-radius: 5px;
+    top: 46px;
+    left: -40%;
+    content: attr(title);
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000;
+    font-size: 0.4em;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 98; }
+
+.clicked {
+  color: steelblue; }
 
 .navbar-custom {
   margin-bottom: 0;
