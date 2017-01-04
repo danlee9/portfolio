@@ -125,7 +125,7 @@ $(function() {
 		var href = $(this).attr('href');
 		$('html, body').stop().animate({
 			scrollTop: $(href).offset().top
-		}, 1500, 'easeInOutExpo');
+		}, 850, 'easeOutSine');
 		event.preventDefault();
 	});
 });
