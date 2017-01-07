@@ -144,4 +144,23 @@ $('.popup').on('mouseenter', function() {
 $('.popup').on('mouseleave', function() {
 	var $this = $(this);
 	if (!$this.hasClass('clicked')) $this.removeClass('hover');
+});
+
+$('#submit').on('click', function(e) {
+	e.preventDefault();
+	$.ajax({
+      method: 'post',
+      dataType: 'json',
+      // data: {
+      // 	name: $('#name').val(),
+      // 	email: $('#email').val(),
+      // 	subject: $('#subject').val(),
+      // 	message: $('#message').val(),
+      // },
+      url: '../phpmailer/email_handler.php',
+      success: function(result) {
+          console.log(result);
+          // $('p').text(result.message);
+      }
+  });
 })

@@ -6,3 +6,5 @@
 build
 **/.sass-cache
 **/*.css.map
+/phpmailer/email_constants.php
+phpmailer/email_constants.php
