@@ -203,7 +203,32 @@ a:hover {
     background: transparent; } }
 /* Contact Section */
 .contact {
-  padding: 40px 0; }
+  padding-top: 80px;
+  padding-bottom: 160px; }
+  .contact h2 {
+    color: #337ab7; }
+
+.contact-header {
+  margin-bottom: 40px; }
+
+.form-control {
+  background: #F0EDF2; }
+
+/* Footer Section */
+footer {
+  background: #333;
+  padding-top: 20px;
+  padding-bottom: 30px; }
+  footer li {
+    display: inline-block;
+    margin-right: 40px;
+    font-weight: bold; }
+  footer a:hover, footer a:active {
+    text-decoration: none;
+    color: dodgerblue; }
+  footer span {
+    position: relative;
+    top: 1px; }
 
 /* Fade In animation for future use. Current implementation with scrolling effect too slow on older laptop*/
 .fadeIn {

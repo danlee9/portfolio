@@ -328,14 +328,65 @@
       
     </section> <!-- Portfolio -->
 
-    <section id="contact" class="contact text-center">
-      <h2>Contact Me</h2>
+    <section id="contact" class="contact text-center container">
+      <!-- <h2>Contact Me</h2>
       <p>Shoot me an e-mail if you'd like to connect with me!</p>
       <p>dan.dh.lee@gmail.com</p>
       <a href="https://www.linkedin.com/in/daniel-lee-23148b119" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a>
       <a href="mailto:dan.dh.lee@gmail.com"><i class="fa fa-envelope fa-3x"></i></a>
-      <a href="https://github.com/danlee9" target="_blank"><i class="fa fa-github fa-3x"></i></a>
+      <a href="https://github.com/danlee9" target="_blank"><i class="fa fa-github fa-3x"></i></a> -->
+      <div class="row contact-header">
+        <h2>Contact Me</h2>
+        <p>Shoot me a message if you'd like to connect with me!</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <!-- <label for="form_name">Name</label> -->
+                <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Name is required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <!-- <label for="form_email">Email</label> -->
+                <input id="form_email" type="text" name="email" class="form-control" placeholder="Email" required="required" data-error="Email is required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input id="form_subject" type="text" name="subject" class="form-control" placeholder="Subject" required="required" data-error="Email is required">
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="col-md-12">
+              <textarea id="message" class="form-control" name="message" rows="7" placeholder="Message"  data-container="body" data-toggle="popover" data-placement="bottom" data-error="Please,leave us a message."></textarea>
+              <div class="help-block with-errors"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input id="submit" type="submit" class="submit btn btn-primary btn-send pull-right" value="Send">
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <footer class="text-center">
+      <ul>
+        <li><a href="https://www.linkedin.com/in/daniel-lee-23148b119" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i><span>LinkedIn</span></a></li>
+        <li><a href="../resume.pdf"><i class="fa fa-file-pdf-o fa-lg"></i><span>Resume</span></a></li>
+        <li><a href="https://github.com/danlee9" target="_blank"><i class="fa fa-github fa-lg"></i><span>Github</span></a></li>
+      </ul>
+    </footer>
 
     <!-- build:js js/combined.js -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
