@@ -334,20 +334,21 @@
         <p>Shoot me a message if you'd like to connect with me!</p>
       </div>
       <!-- <div class="row"> -->
-      <form action="">
+      <form>
+        <p id="form-alert">Name and valid email input required</p>
         <div class="col-md-6 col-md-offset-3">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <!-- <label for="form_name">Name</label> -->
-                <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Name is required">
+                <input id="form-name" type="text" name="name" class="form-control" placeholder="Name">
                 <div class="help-block with-errors"></div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <!-- <label for="form_email">Email</label> -->
-                <input id="form_email" type="text" name="email" class="form-control" placeholder="Email" required="required" data-error="Email is required">
+                <input id="form-email" type="text" name="email" class="form-control" placeholder="Email">
                 <div class="help-block with-errors"></div>
               </div>
             </div>
@@ -362,7 +363,7 @@
           </div> -->
           <div class="row">
             <div class="col-md-12">
-              <textarea id="message" class="form-control" name="message" rows="7" placeholder="Message"  data-container="body" data-toggle="popover" data-placement="bottom" data-error="Please,leave us a message."></textarea>
+              <textarea id="form-message" class="form-control" name="message" rows="7" placeholder="Message"  data-container="body" data-toggle="popover" data-placement="bottom" data-error="Please,leave us a message."></textarea>
               <div class="help-block with-errors"></div>
             </div>
           </div>

@@ -146,21 +146,54 @@ $('.popup').on('mouseleave', function() {
 	if (!$this.hasClass('clicked')) $this.removeClass('hover');
 });
 
+function validateEmail(email) {  
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) return true; 
+  return false;
+
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) ? true : false;
+}
+
 $('#submit').on('click', function(e) {
 	e.preventDefault();
-	$.ajax({
-      method: 'post',
-      dataType: 'json',
-      // data: {
-      // 	name: $('#name').val(),
-      // 	email: $('#email').val(),
-      // 	subject: $('#subject').val(),
-      // 	message: $('#message').val(),
-      // },
-      url: '../phpmailer/email_handler.php',
-      success: function(result) {
-          console.log(result);
-          // $('p').text(result.message);
-      }
-  });
+	var name = $('#form-name').val().trim();
+	var email = $('#form-email').val().trim();
+	var message = $('#form-message').val().trim();
+	var $alert = $('#form-alert');
+	var showAlert = function(msg, error) {
+		$alert.css('opacity', 0);
+		if (error) $alert.addClass('error');
+		else $alert.removeClass('error');
+		$alert.text(msg).animate({opacity: 1}, 800);
+	}
+	if ((name !== '') && validateEmail(email)) {
+		if (message !== '') {
+			$alert.css('opacity', 0);
+			$.ajax({
+	      method: 'post',
+	      dataType: 'json',
+	      data: {
+	      	name: name,
+	      	email: email,
+	      	message: $('#form-message').val()
+	      },
+	      url: '../phpmailer/email_handler.php',
+	      success: function(result) {
+	      		if (result.success) {
+							showAlert('Message sent! (return email: ' + email + ')', false);
+							$('#form-name').val('');
+							$('#form-email').val('');
+							$('#form-message').val('');
+	      		} else {
+							showAlert('Server failed to send message', true);
+							console.log(result.error);
+	      		}
+	      }
+		  });
+		} else {
+			showAlert('You didn\'t write a message!', true);
+		}
+	} else {
+		showAlert('Name and valid email input required', true);
+	}
+	
 })

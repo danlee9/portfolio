@@ -60,6 +60,13 @@
 
 // print(json_encode($res));
 $res = [];
-$res['message'] = 'stuff';
+
+if (true) {
+	$res['success'] = true;
+} else {
+	$res['success'] = false;
+	$res['error'] = 'stuff';
+}
+
 print(json_encode($res));
 ?>

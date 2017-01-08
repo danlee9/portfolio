@@ -209,7 +209,13 @@ a:hover {
     color: #337ab7; }
 
 .contact-header {
-  margin-bottom: 40px; }
+  margin-bottom: 30px; }
+
+#form-alert {
+  opacity: 0;
+  color: #3c763d; }
+  #form-alert.error {
+    color: #a94442; }
 
 .form-control {
   background: #F0EDF2; }
