@@ -147,24 +147,28 @@ $('.popup').on('mouseleave', function() {
 });
 
 function validateEmail(email) {  
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) return true; 
-  return false;
+  // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) return true; 
+  // return false;
 
   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) ? true : false;
 }
+
+var showAlert = function(msg, error) {
+	$alert.css('opacity', 0);
+	if (error) $alert.addClass('error');
+	else $alert.removeClass('error');
+	$alert.text(msg).animate({opacity: 1}, 800);
+}
+
+var $alert = $('#form-alert');
 
 $('#submit').on('click', function(e) {
 	e.preventDefault();
 	var name = $('#form-name').val().trim();
 	var email = $('#form-email').val().trim();
 	var message = $('#form-message').val().trim();
-	var $alert = $('#form-alert');
-	var showAlert = function(msg, error) {
-		$alert.css('opacity', 0);
-		if (error) $alert.addClass('error');
-		else $alert.removeClass('error');
-		$alert.text(msg).animate({opacity: 1}, 800);
-	}
+	
+	
 	if ((name !== '') && validateEmail(email)) {
 		if (message !== '') {
 			$alert.css('opacity', 0);
