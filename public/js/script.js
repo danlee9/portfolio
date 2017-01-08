@@ -153,14 +153,14 @@ function validateEmail(email) {
   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) ? true : false;
 }
 
-var showAlert = function(msg, error) {
+var $alert = $('#form-alert');
+
+var showAlert = function(msg, success) {
 	$alert.css('opacity', 0);
-	if (error) $alert.addClass('error');
+	if (!success) $alert.addClass('error');
 	else $alert.removeClass('error');
 	$alert.text(msg).animate({opacity: 1}, 800);
 }
-
-var $alert = $('#form-alert');
 
 $('#submit').on('click', function(e) {
 	e.preventDefault();
@@ -183,21 +183,21 @@ $('#submit').on('click', function(e) {
 	      url: '../phpmailer/email_handler.php',
 	      success: function(result) {
 	      		if (result.success) {
-							showAlert('Message sent! (return email: ' + email + ')', false);
+							showAlert('Message sent! (return email: ' + email + ')', true);
 							$('#form-name').val('');
 							$('#form-email').val('');
 							$('#form-message').val('');
 	      		} else {
-							showAlert('Server failed to send message', true);
+							showAlert('Server failed to send message');
 							console.log(result.error);
 	      		}
 	      }
 		  });
 		} else {
-			showAlert('You didn\'t write a message!', true);
+			showAlert('You didn\'t write a message!');
 		}
 	} else {
-		showAlert('Name and valid email input required', true);
+		showAlert('Name and valid email input required');
 	}
 	
 })
