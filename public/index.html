@@ -338,14 +338,14 @@
         <p id="form-alert">Name and valid email input required</p>
         <div class="col-md-6 col-md-offset-3">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-12">
               <div class="form-group">
                 <!-- <label for="form_name">Name</label> -->
                 <input id="form-name" type="text" name="name" class="form-control" placeholder="Name">
                 <div class="help-block with-errors"></div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-12">
               <div class="form-group">
                 <!-- <label for="form_email">Email</label> -->
                 <input id="form-email" type="text" name="email" class="form-control" placeholder="Email">
@@ -369,7 +369,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <button id="submit" type="submit" class="submit btn btn-primary btn-send pull-right">Send</button>
+              <button id="submit" type="submit" class="submit btn btn-primary btn-send pull-right"><span class="send-text">Send</span><span class="loading"><i class="fa fa-refresh spinner"></i></span></button>
             </div>
           </div>
         </div>
@@ -378,7 +378,7 @@
     </section>
 
     <footer class="text-center">
-      <ul>
+      <ul class="container">
         <li><a href="https://www.linkedin.com/in/daniel-lee-23148b119" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i><span>LinkedIn</span></a></li>
         <li><a href="../resume.pdf"><i class="fa fa-file-pdf-o fa-lg"></i><span>Resume</span></a></li>
         <li><a href="https://github.com/danlee9" target="_blank"><i class="fa fa-github fa-lg"></i><span>Github</span></a></li>

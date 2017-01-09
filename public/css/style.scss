@@ -19,6 +19,7 @@ body {
 	font-family: "Noto Sans", Helvetica, Arial, sans-serif;
 	color: $dark;
 	background-color: white;
+	overflow-x: hidden;
 }
 
 i {
@@ -113,8 +114,8 @@ a {
 .intro {
 	height: 900px;
 	// padding-top: 50px;
-	background: url('../img/laptop-intro.jpg') no-repeat;
-	// background-size: cover;
+	background: url('../img/laptop-intro.jpg') no-repeat center center;
+	background-size: cover;
 	// padding-bottom: 50px;
 }
 
@@ -148,7 +149,7 @@ a {
 		width: 250px;
 	}
 	p {
-		font-size: 1.4em;
+		font-size: 1.1em;
 		line-height: 1.1em;
 		margin: 20px;
 	}
@@ -215,85 +216,6 @@ a {
   }
 }
 
-@media (max-width: 1550px) {
-	.intro {
-		background: url('../img/laptop-intro-1600.jpg') no-repeat;
-	}
-
-}
-
-@media (max-width: 1200px) {
-	.intro {
-		height: 800px;
-	}
-	.portfolio-caption p {
-		font-size: 0.8em;
-	}
-}
-
-@media (max-width: 1100px) {
-	.intro {
-		background-image: url('../img/laptop-intro-1450.jpg');
-		background-position: center 0px;
-	}
-}
-
-@media (max-width: 990px) {
-	.portfolio {
-		background: url('../img/laptop-work-large.jpg') no-repeat fixed;
-	}
-}
-
-@media (max-width: 974px) {
-	.intro {
-		height: 720px;
-		background-image: url('../img/laptop-intro-1310.jpg');
-	}
-	.intro-message h1 {
-		font-size: 4em;
-	}
-	.portfolio-caption p {
-		font-size: 0.9em;
-	}
-}
-
-@media (max-width: 900px) {
-	.intro {
-		height: 660px;
-		background-image: url('../img/laptop-intro-1200.jpg');
-	}
-}
-
-@media (max-width: 800px) {
-	.intro {
-		height: 500px;
-		background-image: url('../img/laptop-intro-1050.jpg');
-	}
-}
-
-@media (max-width: 775px) {
-	.intro-message h1 {
-		font-size: 3em;
-	}
-	.intro-message h3 {
-		font-size: 1.2em;
-	}
-	.portfolio-item {
-		margin-left: auto;
-		margin-right: auto;
-		width: 320px;
-	}
-	.portfolio h1 {
-		font-size: 2em;
-	}
-	.portfolio h3 {
-		font-size: 1.5em;
-	}
-	.portfolio-overlay {
-		background: transparent;
-	}
-}
-
 /* Contact Section */
 
 .contact {
@@ -322,6 +244,26 @@ a {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #F0EDF2 inset;
+}
+
+#submit {
+	width: 60px;
+	height: 35px;
+}
+
+.loading {
+	display: none;
+}
+
+.spinner {
+	animation: spin 1s linear infinite;
+	position: relative;
+	bottom: 6px;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Footer Section */
@@ -357,5 +299,153 @@ footer {
 	}
 	100% {
 		opacity: 1
+	}
+}
+
+@media (max-width: 1550px) {
+	.intro {
+		// background-image: url('../img/laptop-intro-1600.jpg');
+	}
+
+}
+
+@media (max-width: 1200px) {
+	.intro {
+		height: 800px;
+	}
+	.portfolio-caption p {
+		font-size: 0.8em;
+	}
+}
+
+@media (max-width: 1100px) {
+	.intro {
+		// background-image: url('../img/laptop-intro-1450.jpg');
+		background-position: center 0px;
+	}
+}
+
+@media (max-width: 990px) {
+	.portfolio {
+		background: url('../img/laptop-work-large.jpg') no-repeat fixed;
+	}
+}
+
+@media (max-width: 974px) {
+	.intro {
+		height: 720px;
+		// background-image: url('../img/laptop-intro-1310.jpg');
+	}
+	.intro-message h1 {
+		font-size: 4em;
+	}
+	.portfolio-caption p {
+		font-size: 0.9em;
+	}
+}
+
+@media (max-width: 900px) {
+	.intro {
+		height: 660px;
+		// background-image: url('../img/laptop-intro-1200.jpg');
+	}
+}
+
+@media (max-width: 800px) {
+	.intro {
+		height: 500px;
+		// background-image: url('../img/laptop-intro-1050.jpg');
+	}
+}
+
+@media (max-width: 775px) {
+	.intro-message h1 {
+		font-size: 3em;
+	}
+	.intro-message h3 {
+		font-size: 1.2em;
+	}
+	.portfolio-item {
+		margin-left: auto;
+		margin-right: auto;
+		width: 320px;
+	}
+	.portfolio h1 {
+		font-size: 2em;
+	}
+	.portfolio h3 {
+		font-size: 1.5em;
+	}
+	.portfolio-overlay {
+		background: transparent;
+	}
+}
+
+@media (max-width: 600px) {
+	.intro {
+		height: 400px;
+	}
+	.about {
+		h1 {
+			font-size: 24px;
+		}
+		h2 {
+			font-size: 20px;
+		}
+		p {
+			margin: 10px;
+		}
+		img {
+			width: 200px;
+		}
+	}
+	i {
+		font-size: 2em;
+	}
+	.hover:after {
+		top: 36px;
+		left: -50%;
+		font-size: 0.5em;
+	} 
+}
+
+@media (max-width: 480px) {
+	.intro {
+		height: 300px;
+		background-position: center 20px;
+	}
+	.about p {
+		margin: 5px;
+	}
+	i {
+		font-size: 1.5em;
+	}
+	.hover:after {
+		top: 30px;
+		font-size: 0.6em;
+	}
+	.contact-header {
+		margin-bottom: 12px;
+		p {
+			font-size: 12px;
+		}
+		h2 {
+			font-size: 20px;
+		}
+	}
+	#form-alert {
+		font-size: 12px;
+	}
+	footer li {
+		margin-right: 20px;
+	}
+}
+
+@media (max-width: 410px) {
+	i {
+		font-size: 1.1em;
+	}
+	footer li {
+		margin-right: 10px;
 	}
 }

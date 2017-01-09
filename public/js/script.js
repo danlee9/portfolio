@@ -154,6 +154,12 @@ function validateEmail(email) {
 }
 
 var $alert = $('#form-alert');
+var $sendText = $('.send-text');
+var $loading = $('.loading');
+var spinnerToggle = function() {
+	$sendText.toggle();
+	$loading.toggle();
+}
 
 var showAlert = function(msg, success) {
 	$alert.css('opacity', 0);
@@ -168,10 +174,10 @@ $('#submit').on('click', function(e) {
 	var email = $('#form-email').val().trim();
 	var message = $('#form-message').val().trim();
 	
-	
 	if ((name !== '') && validateEmail(email)) {
 		if (message !== '') {
 			$alert.css('opacity', 0);
+			spinnerToggle();
 			$.ajax({
 	      method: 'post',
 	      dataType: 'json',
@@ -182,15 +188,20 @@ $('#submit').on('click', function(e) {
 	      },
 	      url: '../phpmailer/email_handler.php',
 	      success: function(result) {
-	      		if (result.success) {
-							showAlert('Message sent! (return email: ' + email + ')', true);
-							$('#form-name').val('');
-							$('#form-email').val('');
-							$('#form-message').val('');
-	      		} else {
-							showAlert('Server failed to send message');
-							console.log(result.error);
-	      		}
+      		if (result.success) {
+						showAlert('Message sent! (return email: ' + email + ')', true);
+						$('#form-name').val('');
+						$('#form-email').val('');
+						$('#form-message').val('');
+      		} else {
+						showAlert('Server failed to send message');
+						console.log(result.error);
+      		}
+      		spinnerToggle();
+	      },
+	      error: function() {
+	      	showAlert('Request failed to reach server');
+	      	spinnerToggle();
 	      }
 		  });
 		} else {
