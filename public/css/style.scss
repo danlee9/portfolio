@@ -31,9 +31,13 @@ i {
 a {
 	&:visited, &:active {
 		color: #337ab7;
+		text-decoration: none;
 	}
 	&:hover {
 		color: #23527c;
+	}
+	&:focus {
+		text-decoration: none;
 	}
 }
 
@@ -248,7 +252,7 @@ li {
 .link-icon {
 	display: inline-block;
 	text-align: center;
-	&:hover {
+	&:hover, &:active, &:focus {
 		text-decoration: none;
 	}
 	p {
@@ -327,7 +331,7 @@ footer {
 		margin-right: 40px;
 		font-weight: bold;
 	}
-	a:hover, a:active {
+	a:hover, a:active, a:focus {
 		text-decoration: none;
 		color: dodgerblue;
 	}

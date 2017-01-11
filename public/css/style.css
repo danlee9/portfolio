@@ -15,9 +15,12 @@ i {
   margin: 10px; }
 
 a:visited, a:active {
-  color: #337ab7; }
+  color: #337ab7;
+  text-decoration: none; }
 a:hover {
   color: #23527c; }
+a:focus {
+  text-decoration: none; }
 
 .navbar-brand {
   color: black;
@@ -166,7 +169,7 @@ li {
 .link-icon {
   display: inline-block;
   text-align: center; }
-  .link-icon:hover {
+  .link-icon:hover, .link-icon:active, .link-icon:focus {
     text-decoration: none; }
   .link-icon p {
     margin-bottom: 1px;
@@ -227,7 +230,7 @@ footer {
     display: inline-block;
     margin-right: 40px;
     font-weight: bold; }
-  footer a:hover, footer a:active {
+  footer a:hover, footer a:active, footer a:focus {
     text-decoration: none;
     color: dodgerblue; }
   footer span {
