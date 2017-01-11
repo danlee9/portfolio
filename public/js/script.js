@@ -96,12 +96,12 @@ function fadeIn() {
 	 $item.each( function(i){
       
       var $this = $(this);      
-      var bottom_of_object = $this.position().top + $this.outerHeight();
+      var bottom_of_object = $this.offset().top + $this.outerHeight();
       var bottom_of_window = $window.scrollTop() + $window.height();
       
        
       bottom_of_window = bottom_of_window + 200;  //Adjust the "200" to either have a delay or that the content starts fading a bit before you reach it  
-    
+
       if( bottom_of_window > bottom_of_object ){
           
          $this.addClass('fadeIn');
@@ -114,10 +114,43 @@ navbar();
 // parallax();
 fadeIn();
 
+var lastId,
+    navbarHeight = $navbar.outerHeight(),
+    // All list items
+    menuItems = $navbar.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
 $window.scroll(function(){
 	navbar();
 	// parallax();
 	fadeIn();
+	
+	// Get container scroll position
+  var fromTop = $(this).scrollTop() + navbarHeight;
+   
+  // Get id of current scroll item
+  var cur = scrollItems.map(function(){
+    if ($(this).offset().top < fromTop)
+      return this;
+  });
+
+  cur = cur[cur.length-1];
+  var id = cur && cur.length ? cur[0].id : "";
+
+  if (lastId !== id) {
+    lastId = id;
+    // Set/remove active class
+    menuItems.parent().removeClass("active");
+    if (id && (id !== 'top')) {
+    	menuItems.filter("[href='#"+id+"']").parent().addClass("active");
+    }
+    
+   }  
+
 });
 
 $(function() {
@@ -128,6 +161,10 @@ $(function() {
 		}, 850, 'easeOutSine');
 		event.preventDefault();
 	});
+});
+
+$('.nav a').click(function(){
+    $('.navbar-collapse').collapse('hide');
 });
 
 $('.popup').on('click', function() {
@@ -211,4 +248,5 @@ $('#submit').on('click', function(e) {
 		showAlert('Name and valid email input required');
 	}
 	
-})
+});
+

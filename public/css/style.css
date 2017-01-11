@@ -7,7 +7,8 @@ body {
   font-family: "Noto Sans", Helvetica, Arial, sans-serif;
   color: #333333;
   background-color: white;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
 
 i {
   font-size: 3em;
@@ -17,6 +18,20 @@ a:visited, a:active {
   color: #337ab7; }
 a:hover {
   color: #23527c; }
+
+.navbar-brand {
+  color: black;
+  transition: all 0.5s; }
+
+.nav > li > a:focus {
+  background-color: transparent;
+  color: #337ab7; }
+
+li {
+  transition: all 0.5s; }
+
+.active {
+  background-color: seashell; }
 
 .name {
   text-shadow: 1px 2px 3px #555; }
@@ -52,7 +67,7 @@ a:hover {
 .icon-bar {
   background: #337ab7; }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .navbar-custom {
     padding: 20px 0;
     border-bottom: none;
@@ -64,8 +79,14 @@ a:hover {
 
   .top-nav-collapse {
     padding: 0;
-    background-color: #333333;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); } }
+    background-color: #333333; }
+    .top-nav-collapse .navbar-brand {
+      color: #337ab7; }
+      .top-nav-collapse .navbar-brand:hover {
+        color: dodgerblue; } }
+@media (max-width: 768px) {
+  .navbar-brand {
+    color: #337ab7; } }
 /* Intro Section */
 .intro {
   height: 900px;
@@ -141,6 +162,15 @@ a:hover {
   position: relative;
   top: 33%;
   left: 25%; }
+
+.link-icon {
+  display: inline-block;
+  text-align: center; }
+  .link-icon:hover {
+    text-decoration: none; }
+  .link-icon p {
+    margin-bottom: 1px;
+    font-weight: bold; }
 
 .portfolio-caption {
   background-color: rgba(0, 0, 0, 0.8);

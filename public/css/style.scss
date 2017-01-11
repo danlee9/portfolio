@@ -20,6 +20,7 @@ body {
 	color: $dark;
 	background-color: white;
 	overflow-x: hidden;
+	position: relative;
 }
 
 i {
@@ -34,6 +35,31 @@ a {
 	&:hover {
 		color: #23527c;
 	}
+}
+
+.navbar-brand {
+	color: black;
+	transition: all 0.5s
+}
+
+// .navbar-brand.collapse {
+// 	color: #337ab7;
+// 	&:hover {
+// 		dodgerblue;
+// 	}
+// }
+
+.nav>li>a:focus {
+	background-color: transparent;
+	color: #337ab7;
+}
+
+li {
+	transition: all 0.5s;
+}
+
+.active {
+	background-color: seashell;
 }
 
 .name {
@@ -93,7 +119,7 @@ a {
 	background: #337ab7;
 }
 
-@media(min-width:767px) {
+@media(min-width:768px) {
     .navbar-custom {
         padding: 20px 0;
         border-bottom: none;
@@ -105,8 +131,20 @@ a {
     .top-nav-collapse {
         padding: 0;
         background-color: $dark;
-        border-bottom: 1px solid rgba(255,255,255,0.3);
+        // border-bottom: 1px solid rgba(255,255,255,0.3);
+        .navbar-brand {
+        	color: #337ab7;
+					&:hover {
+						color: dodgerblue;
+					}
+        }
     }
+}
+
+@media(max-width: 768px) {
+	.navbar-brand {
+		color: #337ab7;
+	}
 }
 
 /* Intro Section */
@@ -207,6 +245,18 @@ a {
 	left: 25%;
 }
 
+.link-icon {
+	display: inline-block;
+	text-align: center;
+	&:hover {
+		text-decoration: none;
+	}
+	p {
+		margin-bottom: 1px;
+		font-weight: bold;
+	}
+}
+
 .portfolio-caption {
 	background-color: rgba(0,0,0, 0.8);
   text-align: center;
@@ -298,7 +348,7 @@ footer {
 		opacity: 0;
 	}
 	100% {
-		opacity: 1
+		opacity: 1;
 	}
 }
 
