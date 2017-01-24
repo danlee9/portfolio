@@ -46,7 +46,7 @@ li {
 .hover {
   color: dodgerblue; }
   .hover:after {
-    background: #fff;
+    background: transparent;
     border-radius: 5px;
     top: 46px;
     left: -40%;
@@ -119,7 +119,7 @@ li {
   .about img {
     width: 250px; }
   .about p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: 1.1em;
     margin: 20px; }
 

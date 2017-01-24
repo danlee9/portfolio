@@ -94,7 +94,7 @@ li {
 .hover {
 	color: dodgerblue;
 	&:after {
-		background: #fff;
+		background: transparent;
     border-radius: 5px;
     top: 46px;
     left: -40%;
@@ -191,7 +191,7 @@ li {
 		width: 250px;
 	}
 	p {
-		font-size: 1.1em;
+		font-size: 1.2em;
 		line-height: 1.1em;
 		margin: 20px;
 	}
